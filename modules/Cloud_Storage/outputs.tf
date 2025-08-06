@@ -12,3 +12,8 @@ output "forticus_bucket_name" {
   value = google_storage_bucket.forticus_bucket.name
   description = "Name of the storage bucket"
 }
+
+output "forticus_ip_address" {
+  value = google_compute_global_address.forticus_ip.address
+  description = "Static IP address for the load balancer"
+}

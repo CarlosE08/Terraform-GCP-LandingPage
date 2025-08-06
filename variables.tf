@@ -19,8 +19,8 @@ variable "common_tags" {
     project  = string
   })
   default = {
-    owner    = "Carlos Escobar"
-    customer = "Forticus Tech"
-    project  = "Terraform_testing"
+    owner    = "carlos-escobar"
+    customer = "forticus-tech"
+    project  = "terraform_testing"
   }
 }
