@@ -10,5 +10,5 @@ output "static_ip" {
 }
 
 output "landing_page_url" {
-  value = "https://landing-forticus.ddns.net"
+  value = "https://${var.domain}"
 }
