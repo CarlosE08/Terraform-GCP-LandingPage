@@ -1,6 +1,7 @@
 ######################
 # Outputs
 ######################
+
 output "bucket_url" {
   value = "https://storage.googleapis.com/${module.Cloud_Storage.forticus_bucket_name}/index.html"
 }
