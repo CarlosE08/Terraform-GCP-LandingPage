@@ -1,0 +1,23 @@
+# Nombre del proyecto de Google Cloud Platform
+variable "project" {}
+
+# Región de Google Cloud Platform donde se desplegarán los recursos
+variable "region" {}
+
+# Nombre del bucket de Cloud Storage
+variable "bucket_name" {}
+
+# Etiquetas comunes para todos los recursos, en GCP llamadas "labels"
+variable "common_tags" {
+  description = "Etiquetas comunes para todos los recursos"
+  type = object({
+    owner    = string
+    customer = string
+    project  = string
+  })
+  default = {
+    owner    = "Carlos Escobar"
+    customer = "Forticus Tech"
+    project  = "Terraform_testing"
+  }
+}
