@@ -6,7 +6,7 @@ resource "google_compute_managed_ssl_certificate" "forticus_cert" {
   name = "forticus-cert"
 
   managed {
-    domains = ["landing-forticus.ddns.net"] # Asegúrate de usar tu dominio No-IP aquí
+    domains = [var.domain] # Asegúrate de usar tu dominio No-IP aquí
   }
 }
 

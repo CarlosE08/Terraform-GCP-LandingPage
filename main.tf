@@ -10,4 +10,5 @@ module "Cloud_Load_Balancing" {
   common_tags    = var.common_tags
   backend_id     = module.Cloud_Storage.backend_id
   forticus_ip_id = module.Cloud_Storage.forticus_ip_id
+  domain         = var.domain
 }

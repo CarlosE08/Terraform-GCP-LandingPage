@@ -7,6 +7,9 @@ variable "region" {}
 # Nombre del bucket de Cloud Storage
 variable "bucket_name" {}
 
+# Dominio para la Landing Page
+variable "domain" {}
+
 # Etiquetas comunes para todos los recursos, en GCP llamadas "labels"
 variable "common_tags" {
   description = "Etiquetas comunes para todos los recursos"
