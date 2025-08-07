@@ -3,6 +3,7 @@ module "Cloud_Storage" {
   source      = "./modules/Cloud_Storage"
   bucket_name = var.bucket_name
   common_tags = var.common_tags
+  region      = var.region
 }
 
 module "Cloud_Load_Balancing" {

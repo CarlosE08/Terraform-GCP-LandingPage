@@ -4,7 +4,7 @@
 ######################
 resource "google_storage_bucket" "forticus_bucket" {
   name                        = var.bucket_name
-  location                    = "US"
+  location                    = var.region
   force_destroy               = true
   uniform_bucket_level_access = true
 
