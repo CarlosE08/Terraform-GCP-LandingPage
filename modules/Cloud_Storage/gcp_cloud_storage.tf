@@ -27,7 +27,6 @@ resource "google_storage_bucket_object" "static_assets" {
   content_type = lookup(var.mime_types, regex("\\.[^.]+$", each.value), "application/octet-stream")
 }
 
-
 ######################
 # 2. IP Global
 ######################
