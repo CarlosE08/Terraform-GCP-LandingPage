@@ -18,23 +18,15 @@ resource "google_storage_bucket" "forticus_bucket" {
   })
 }
 
-resource "google_storage_bucket_object" "index" {
-  name   = "index.html"
-  bucket = google_storage_bucket.forticus_bucket.name
-  #content      = "# Forticus Landing en construcción"
+resource "google_storage_bucket_object" "static_assets" {
+  for_each = fileset("dist", "**") # Esto incluye todos los archivos dentro de dist y subdirectorios
 
-  source       = "./dist/index.html" # Asegúrate de que el archivo index.html esté en la carpeta dist
-  content_type = "text/html"
+  name        = each.value
+  bucket      = google_storage_bucket.forticus_bucket.name
+  source      = "dist/${each.value}"
+  content_type = lookup(var.mime_types, regex("\\.[^.]+$", each.value), "application/octet-stream")
 }
 
-resource "google_storage_bucket_object" "error" {
-  name   = "error.html"
-  bucket = google_storage_bucket.forticus_bucket.name
-  #content      = "# Forticus Landing en construcción"
-
-  source       = "./dist/error.html" # Asegúrate de que el archivo index.html esté en la carpeta dist
-  content_type = "text/html"
-}
 
 ######################
 # 2. IP Global

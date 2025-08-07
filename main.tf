@@ -4,6 +4,7 @@ module "Cloud_Storage" {
   bucket_name = var.bucket_name
   common_tags = var.common_tags
   region      = var.region
+  mime_types  = var.mime_types
 }
 
 module "Cloud_Load_Balancing" {

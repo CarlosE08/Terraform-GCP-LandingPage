@@ -24,3 +24,16 @@ variable "common_tags" {
     project  = "terraform_testing"
   }
 }
+
+variable "mime_types" {
+  type = map(string)
+  default = {
+    ".html" = "text/html"
+    ".css"  = "text/css"
+    ".js"   = "application/javascript"
+    ".json" = "application/json"
+    ".png"  = "image/png"
+    ".jpg"  = "image/jpeg"
+    ".svg"  = "image/svg+xml"
+  }
+}
